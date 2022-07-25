@@ -1,13 +1,13 @@
 import {useState, useEffect} from 'react';
 import { useSelector, useDispatch } from "react-redux";
-// import Tabla from './Tabla/Tabla'; 
 import { makeCall, Clear } from '../redux/actions.js';
-
+// import { saveAs } from "file-saver";
 
 
 function Boton(){
     const dispatch = useDispatch()
 
+ 
     var [query, setQuery] = useState('');
     var datos = useSelector(state => state.datos);
     var consulta = useSelector(state => state.consulta);
@@ -55,7 +55,7 @@ function Boton(){
             <button type='submit'>Clear</button>
         </form>
 
-        <h1>{consulta}</h1>
+        
 
     </div>)
 }
