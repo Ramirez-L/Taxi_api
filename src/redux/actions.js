@@ -26,3 +26,19 @@ export function Clear(){
         }
     }
 }
+
+export function Quick_query(quick){
+    return function (dispatch) {
+        return axios.get('http://45.56.77.151:8080/query/', {
+            params: {
+                consulta: quick
+            }
+        })
+        .then( res => res.data )
+        .then( data => (dispatch({type: "GET_QUERY", payload: {
+            data,
+            consulta: quick,
+            query: ''
+        } })))
+    }
+}

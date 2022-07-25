@@ -6,7 +6,18 @@ const initialState = {
     datos: [{'Columna': "Fila"}],
 
     // Consulta
-    consulta: ''
+    consulta: '',
+
+    // Consultas rapidas
+    quick: [
+        {"trip": "select * from trip limit 5"},
+        {"borough": "select * from borough"},
+        {"weather": "select * from weather"},
+        {"location": "select * from location"},
+        {"rate": "select * from rate"},
+        {"pay_type": "select * from pay_type"},
+        {"vendor": "select * from vendor"}
+    ]
 
 };
 

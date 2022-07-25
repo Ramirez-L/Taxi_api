@@ -7,7 +7,9 @@ function Boton(){
 
     var [query, setQuery] = useState('');
     var datos = useSelector(state => state.datos);
-    var consulta = useSelector(state => state.consulta);
+
+    // Para condicionar solo consultas, sin alterar
+    const re = "select.+"
 
     const llamada = event => {
         event.preventDefault()
@@ -41,6 +43,7 @@ function Boton(){
             name="query" 
             value={query} 
             onChange={event => setQuery(event.target.value)}
+            pattern={re}
             required
             ></input><br></br>
 
