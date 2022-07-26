@@ -10,28 +10,20 @@ import { Quick_query } from '../../redux/actions';
 export default function Opciones() {
     const dispatch = useDispatch()
     
+
     const [tabla, setTabla] = React.useState('');
     var quick = useSelector(state => state.quick);
     
   const handleChange = (event) => {
-    setTabla(event.target.value);
+      event.preventDefault()
+      setTabla(event.target.value);
+
+      var consulta = Object.values(quick[event.target.value])[0]
+      dispatch(Quick_query(consulta))
   };
 
-
-  const llamada = event => {
-    event.preventDefault()
-    try {
-        var dato = Object.values(quick)[tabla]
-        var consulta = Object.values(dato)[0]
-        dispatch(Quick_query(consulta))
-    }
-    catch (error) {
-        console.log(error)
-    }
-    }
-
   return (
-    <Box sx={{ minWidth: 120 }}>
+    <Box sx={{ minWidth: 120 }} style={{"marginTop": "10px"}}>
       <FormControl fullWidth size="medium">
         <InputLabel id="demo-simple-select-label">Tabla</InputLabel>
         <Select

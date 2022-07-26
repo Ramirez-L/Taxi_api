@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Demostración - Frontend - Taxi API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El siguiente es el código creado en React para poder crear una consulta a la Base de Datos, un producto adicional para apoyar la exposición del proyecto y como se pueden consumir los datos procesados en nuevos análisis.
 
-## Available Scripts
+## Pasos para activar el Frontend desde una Máquina local o Remota
 
-In the project directory, you can run:
+Es requisito tener instalado NodeJS y npm para poder correr los archivos de dependencias y código React.
 
-### `npm start`
+- Primer paso, desde la carpeta del repositorio, hacer lo siguiente:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+``` CMD
+$ /[dirección_del_repo] npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+De esta manera se instalan todas las dependencias necesarias para el proyecto.
 
-### `npm test`
+- Luego de que haya finalizado la instalación, desde la carpeta del repositorio, hacer lo siguiente:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+``` CMD
+$ /[dirección_del_repo] npm start
+```
 
-### `npm run build`
+Asi puede iniciar el entorno de Desarrollo y se puede acceder desde la siguiente direccion URL en el navegador:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+``` CMD
+http://localhost:3000/
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+O en caso de haber activado el servicio desde la nube o maquina externa:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+``` CMD
+http://[URL o IP]:3000/
+http://0.0.0.0:3000/
+```
 
-### `npm run eject`
+![main](./images/main.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Es una página simple para poder hacer consultas y comprobar datos. La visual es solo la tabla de datos consultados. Se divide en dos partes.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Para un acceso a las Tablas Rápidas en la parte superior, solo es necesario que pueda seleccionar una tabla de las opciones desplegables.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![main](./images/quick_table.png)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![main](./images/quick_table_1.png)
 
-## Learn More
+Finalmente para poder hacer otro tipo de consultas, esta la opcion de "Ingresar Query". Asi se pueden realizar otro tipo de consultas hacia la Base de Datos - Postgres. Luego de escribir la consulta, hacer click en Submit y esperar los resultados.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![main](./images/query_1.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Funciona solamente para consultas y no es posible realizar modificaciones a las tablas por medio de SQL.
 
-### Code Splitting
+Permite los siguientes formatos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- "  SELECT ..."
+- " selelct ..."
+- "SeLeCT ..."
 
-### Analyzing the Bundle Size
+No permite los formatos:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- "create ..."
+- "Delete ..."
+- "alter ..."
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![main](./images/query_2.png)
